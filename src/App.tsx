@@ -1,14 +1,16 @@
 import React from 'react';
-import './App.css';
+import TypedWords from './components/write-rewrite/TypedWords';
 
-function App() {
-  return (<>
-  
-<div className="App">
+class App extends React.Component<{},{}>{
+  render(): React.ReactNode {
+    return(<>
+    
+    <div className="App">
+      <TypedWords words={["much phrase","such words"]}></TypedWords>
+    </div>
 
-</div>
-  
-  </>);
+    </>)
+  }
 }
 
 export default App;
