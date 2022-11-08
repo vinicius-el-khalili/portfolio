@@ -27,10 +27,8 @@ class TypedWords extends React.Component<Props,{
             await delay(500/this.state.current.length,()=>{
                 output+=this.state.current[i]
                 this.setState({output:output})
-                console.log(i)
             })
         }
-        console.log("write done")
     }
     async unwrite(){
         let output=this.state.current
@@ -39,10 +37,8 @@ class TypedWords extends React.Component<Props,{
             await delay(500/this.state.current.length,()=>{
                 output=this.state.current.slice(0,i)
                 this.setState({output:output})
-                console.log(i)
             })
         }
-        console.log('unwrite done')
     }
     async cycle(){
         if (this.state.running){console.log("nope");return null}

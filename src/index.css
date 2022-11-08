@@ -12,17 +12,6 @@ body {
   color: #f4f0bb;
 }
 
-.TypedWords {
-  background-color: cornflowerblue;
-  border: 1px solid black;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
 .Navbar {
   width: 100%;
   padding: 0.5rem 0 0.5rem 0;
@@ -86,6 +75,20 @@ body {
   background-color: rgba(216, 191, 216, 0.5);
   margin: 1rem 0 2rem 0;
   border-radius: 0 10px 10px 0;
+}
+.MainContainer .ScreenSection section {
+  transition: 1s;
+  position: absolute;
+  width: 45%;
+  height: 70%;
+  background-color: rgb(126, 17, 126);
+  opacity: 0.1;
+  border-radius: 0 10px 10px 0;
+  display: grid;
+  padding: 3rem;
+}
+.MainContainer .ScreenSection section h1 {
+  font-size: 4rem;
 }
 
 /*# sourceMappingURL=index.css.map */
