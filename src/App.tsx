@@ -1,17 +1,15 @@
 import React from 'react';
-import TypedWords from './components/write-rewrite/TypedWords2';
-
+import Home from './components/Home';
 class App extends React.Component<{},{}>{
   render(): React.ReactNode {
     return(<>
     
     <div className="App">
-
-      <TypedWords></TypedWords>
+      <Home/>
     </div>
 
     </>)
   }
 }
-
 export default App;
+

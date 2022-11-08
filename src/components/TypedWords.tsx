@@ -3,7 +3,9 @@ import React from "react"
 function delay(time:number,callback:Function){ // use setTimeout synchonously
     return new Promise((resolve)=>{setTimeout(()=>{callback();resolve(null)},time)})
 }
-type Props={}
+type Props={
+    texts:string[]
+}
 class TypedWords extends React.Component<Props,{
     output:string,
     current:string
@@ -45,24 +47,24 @@ class TypedWords extends React.Component<Props,{
     async cycle(){
         if (this.state.running){console.log("nope");return null}
         this.setState({running:true})
-        let msg=["HTML","CSS","JavaScript","TypeScript","Sass","React","Git","Node","Express","MongoDB"]
         let i=0
         while (true){
-            this.setState({current:msg[i]})
+            this.setState({current:this.props.texts[i]})
             await this.write()
             await delay(500,()=>{})
             await this.unwrite()
             i++
-            if(i>=msg.length){
+            if(i>=this.props.texts.length){
                 i=0
             }
         }
     }
+    componentDidMount(): void {
+        this.cycle()
+    }
     render(): React.ReactNode {
         return(
-            <div className="TypedWords" onClick={this.cycle}>
-                <h1>{this.state.output}_</h1>
-            </div>
+            <>{this.state.output}_</>
         )
     }
 }

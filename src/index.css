@@ -7,6 +7,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  background-color: #5e60ce;
+  color: #f4f0bb;
+}
+
 .TypedWords {
   background-color: cornflowerblue;
   border: 1px solid black;
@@ -17,8 +22,70 @@
   align-items: center;
   cursor: pointer;
 }
-.TypedWords h1 {
-  font-size: 4rem;
+
+.Navbar {
+  width: 100%;
+  padding: 0.5rem 0 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #87c38f;
+}
+.Navbar button {
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  cursor: pointer;
+}
+.Navbar button:hover {
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.MainContainer {
+  display: grid;
+  width: 80%;
+  height: 80vh;
+  margin: auto;
+  margin-top: 2rem;
+  grid-template-columns: 1fr 1.5fr;
+}
+.MainContainer .MySection {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  display: grid;
+  box-shadow: -15px -15px #87c38f;
+}
+.MainContainer .MySection .PresentationBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.MainContainer .MySection .PresentationBox .Photo {
+  width: 200px;
+  height: 200px;
+  background-color: #87c38f;
+  border: 5px solid #87c38f;
+  border-radius: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.MainContainer .MySection .PresentationBox .Links {
+  display: flex;
+  gap: 0.3rem;
+}
+.MainContainer .MySection .PresentationBox .Links img {
+  height: 30px;
+  cursor: pointer;
+}
+.MainContainer .ScreenSection {
+  background-color: rgba(216, 191, 216, 0.5);
+  margin: 1rem 0 2rem 0;
+  border-radius: 0 10px 10px 0;
 }
 
 /*# sourceMappingURL=index.css.map */
