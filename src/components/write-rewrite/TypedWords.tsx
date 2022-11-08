@@ -1,63 +1,41 @@
 import React from "react"
-type myProps={
-    words:string[],
-}
 
-class TypedWords extends React.Component<myProps,{
-    currentWord:string,
-    text:string,
-    flag:boolean,
-    dt:number}>{
-    constructor(props:myProps){
+type Props={
+
+}
+function delay(time:number,callback:Function) {  
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            callback()
+            resolve(null)
+        }, time)
+    });
+  }
+class TypedWords extends React.Component<Props,{
+    color:string
+}>{
+    constructor(props:Props){
         super(props)
         this.state={
-            currentWord:"default",
-            text:"default",
-            flag:true,
-            dt:200
+            color:"blue"
         }
-        this.writeWord=this.writeWord.bind(this)
-    }
-    recursiveWrite(index:number=0){
-        if (this.state.flag){
-            setTimeout(() => {
-                let text = this.state.text+this.state.currentWord[index]
-                this.setState({text:text})
-                if (text.length >= this.state.currentWord.length){
-                    this.recursiveUnwrite()
-                }else{
-                    this.recursiveWrite(index+1)
-                }
-            }, this.state.dt)
-        }
-    }
-    recursiveUnwrite(index:number=this.state.currentWord.length){
-        if (this.state.flag){
-            setTimeout(() => {
-                let text = this.state.text.slice(0,index)
-                console.log(text)
-                this.setState({text:text})
-                if (index <= 1){
-                    this.recursiveWrite()
-                }
-                this.recursiveUnwrite(index-1)
-            }, this.state.dt)
-        }else{
-            return null
-        }
-    }
-    writeWord(word:string){
-        this.setState({flag:true,text:"",currentWord:word})
-        this.recursiveWrite()
     }
     render(): React.ReactNode {
-        return(<>
-        
-        <div className="TypedWords" onClick={()=>{this.writeWord("yayaya")}}>
-            <div className="word">{this.state.text}</div>
-        </div>
-
-        </>)
+        return(
+            <h1 style={{
+                width:"100vw",
+                height:"100vh",
+                display:"flex",
+                justifyContent:"center",
+                alignItems:"center",
+                color:this.state.color
+            }}  onClick={async ()=>{
+                console.log("wait...")
+                await delay(1000,()=>{console.log("hey")})
+                console.log("check!")
+            }}
+            >hello!!!1</h1>
+        )
     }
 }
 

@@ -6,7 +6,8 @@ class App extends React.Component<{},{}>{
     return(<>
     
     <div className="App">
-      <TypedWords words={["much phrase","such words"]}></TypedWords>
+
+      <TypedWords></TypedWords>
     </div>
 
     </>)
