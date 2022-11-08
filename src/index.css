@@ -8,9 +8,17 @@
 }
 
 .TypedWords {
+  background-color: cornflowerblue;
   border: 1px solid black;
   width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+}
+.TypedWords h1 {
+  font-size: 4rem;
 }
 
 /*# sourceMappingURL=index.css.map */
