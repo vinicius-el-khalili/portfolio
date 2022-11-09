@@ -12,6 +12,11 @@ body {
   color: #f4f0bb;
 }
 
+.App {
+  height: 100vh;
+  overflow: hidden;
+}
+
 .Navbar {
   width: 100%;
   padding: 0.5rem 0 0.5rem 0;
@@ -23,7 +28,6 @@ body {
 .Navbar button {
   background-color: transparent;
   border: none;
-  border-radius: 6px;
   padding: 12px;
   cursor: pointer;
 }
@@ -34,17 +38,17 @@ body {
 
 .MainContainer {
   display: grid;
-  width: 80%;
-  height: 80vh;
+  width: 80vw;
   margin: auto;
   margin-top: 2rem;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 2fr;
 }
 .MainContainer .MySection {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   display: grid;
   box-shadow: -15px -15px #87c38f;
+  height: 80vh;
 }
 .MainContainer .MySection .PresentationBox {
   display: flex;
@@ -72,17 +76,35 @@ body {
   cursor: pointer;
 }
 .MainContainer .ScreenSection {
-  background-color: rgba(216, 191, 216, 0.5);
   margin: 1rem 0 2rem 0;
   border-radius: 0 10px 10px 0;
+  height: 75vh;
+  overflow-y: scroll;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.MainContainer .ScreenSection::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+}
+.MainContainer .ScreenSection::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: transparent;
+}
+.MainContainer .ScreenSection::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #87c38f;
+}
+.MainContainer .ScreenSection::-webkit-scrollbar-thumb:hover {
+  border-radius: 10px;
+  background: #555;
 }
 .MainContainer .ScreenSection section {
-  transition: 1s;
-  position: absolute;
-  width: 45%;
-  height: 70%;
-  background-color: rgb(126, 17, 126);
-  opacity: 0.1;
+  z-index: 2;
+  height: 300vh;
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 0 10px 10px 0;
   display: grid;
   padding: 3rem;

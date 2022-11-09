@@ -1,54 +1,39 @@
 import React from 'react'
-import TypedWords from './TypedWords'
+import Navbar from './Navbar'
+import PresentationBox from './PresentationBox'
+import ScreenSection from './ScreenSection'
 type Props={
 
 }
-class Home extends React.Component<Props,{}>{
+class Home extends React.Component<{},{section:string}>{
+    state={
+        section:"About",
+    }
+    screenSection: any 
     constructor(props:Props){
         super(props)
+        this.home_ChangeSection=this.home_ChangeSection.bind(this)
+        this.home_handleNavButton=this.home_handleNavButton.bind(this)
+        this.screenSection=React.createRef()
     }
+    home_ChangeSection(section:string){
+        this.screenSection.current.changeSection(section)
+    }
+    home_handleNavButton(section:string){
+        this.home_ChangeSection(section)
+    }
+
     render(): React.ReactNode {
         return(<>
 
             <div className="Home">
-                <nav className="Navbar">
-                    <button className="Nav-button">About</button>
-                    <button className="Nav-button">Skills</button>
-                    <button className="Nav-button">Projects</button>
-                    <button className="Nav-button">Contact</button>
-                    <button className="Nav-button">Test</button>
-                </nav>
-                <div className="MainContainer">
-                    <div className="MySection">
-                        <div className="PresentationBox">
-                            <div className="Photo"><img src=""/></div>
-                            <h1>...</h1>
-                            <h4><TypedWords texts={[
-                                "..."
-                            ]}/></h4>
-                            <div className="Links">
-                                <a href=""><img src="icons8-github.svg"/></a>
-                                <img src="icons8-gmail.svg"/>
-                                <img src="icons8-instagram.svg"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="ScreenSection">
-                        <section className="About">
-                            <h1>About</h1>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint libero labore laboriosam non ipsam nostrum dignissimos. </p>
-                        </section>
-                        <section className="About">
-                            <h1>Skills</h1>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint libero labore laboriosam non ipsam nostrum dignissimos. </p>
-                        </section>
-                        <section className="Projects">
-                            <h1>Projects</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro molestiae inventore dicta.</p>
-                        </section>
-                    </div>
+                <Navbar home_handleNavButton={this.home_handleNavButton}/>
+                <div className="MainContainer" >
+                    <PresentationBox/>
+                    <ScreenSection ref={this.screenSection}/>
                 </div>
             </div>
+            
         </>)
     }
 }
