@@ -10,7 +10,7 @@ class SSkills extends React.Component<Props,{}>{
             "javascript":"icons8-javascript.svg",
             "typescript":"icons8-typescript.svg",
             "sass":"icons8-sass.svg",
-            "nodejs":"icons8-nodejs.svg",
+            "nodejs":"icons8-node-js.svg",
             "react":"icons8-reagir.svg",
             "mongodb":"icons8-mongodb.svg",
             "git":"icons8-git.svg",
@@ -22,15 +22,17 @@ class SSkills extends React.Component<Props,{}>{
 <section className="Skills">
     <h1>Skills</h1>
     <div className="SkillTree">
-        <div><img className="skillIcon"src="icons8-html-5.svg"/><h2>HTML 5</h2></div>
-        <div><img className="skillIcon"src="icons8-css3.svg"/><h2>CSS 3</h2></div>
-        <div><img className="skillIcon"src="icons8-javascript.svg"/><h2>JavaScript ES6</h2></div>
-        <div><img className="skillIcon"src="icons8-typescript.svg"/><h2>TypeScript</h2></div>
-        <div><img className="skillIcon"src="icons8-sass.svg"/><h2>Sass</h2></div>
-        <div><img className="skillIcon"src="icons8-nodejs.svg"/><h2>Node</h2></div>
-        <div><img className="skillIcon"src="icons8-reagir.svg"/><h2>React</h2></div>
-        <div><img className="skillIcon"src="icons8-mongodb.svg"/><h2>MongoDB</h2></div>
-        <div><img className="skillIcon"src="icons8-git.svg"/><h2>Git/Github</h2></div>
+        <div><img className="skillIcon" alt="" src="icons8-html-5.svg"/><h2>HTML 5</h2></div>
+        <div><img className="skillIcon" alt="" src="icons8-css3.svg"/><h2>CSS 3</h2></div>
+        <div><img className="skillIcon" alt="" src="icons8-javascript.svg"/><h2>JavaScript</h2></div>
+        <div><img className="skillIcon" alt="" src="icons8-typescript.svg"/><h2>TypeScript</h2></div>
+        <div><img className="skillIcon" alt="" src="icons8-sass.svg"/><h2>Sass</h2></div>
+        <div><img className="skillIcon" alt="" src="icons8-node-js.svg"/><h2>Node</h2></div>
+        <div><img className="skillIcon" alt="" src="expressjs-icon.svg"/><h2>Express</h2></div>
+        <div><img className="skillIcon" alt="" src="icons8-reagir.svg"/><h2>React</h2></div>
+        <div><img className="skillIcon" alt="" src="icons8-mongodb.svg"/><h2>MongoDB</h2></div>
+        <div><img className="skillIcon" alt="" src="icons8-git.svg"/><h2>Git/Github</h2></div>
+        <div><img className="skillIcon" alt="" src="icons8-python.svg"/><h2>Python</h2></div>
     </div>
 </section>
         
